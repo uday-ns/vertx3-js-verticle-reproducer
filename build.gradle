@@ -1,0 +1,27 @@
+plugins {
+    id "java"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url = "http://oss.sonatype.org/content/repositories/snapshots/"
+    }
+}
+
+dependencies {
+    compile "io.vertx:vertx-core:3.0.0-SNAPSHOT"
+    compile "io.vertx:vertx-lang-js:3.0.0-SNAPSHOT"
+    compile "io.vertx:vertx-unit:3.0.0-SNAPSHOT"
+    testCompile "junit:junit:4.12"
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+group = "io.test.js"
+version = "0.1.0"
